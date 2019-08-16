@@ -6,7 +6,8 @@ import {
     UPDATE_CONTACT,
     FILTER_CONTACT,
     SET_ALERT,
-    REMOVE_ALERT
+    REMOVE_ALERT,
+    CLEAR_FILTER
 } from '../types';
 
 export default (state, action) => {
@@ -35,6 +36,19 @@ export default (state, action) => {
             return {
                 ...state,
                 current: null 
+            }
+        case FILTER_CONTACT:
+            return {
+                ...state,
+                filtered: state.contacts.filter(contact => {
+                    const regex = new RegExp(`${action.payload}`,'gi'); // global and insensitive
+                    return contact.name.match(regex) || contact.email.match(regex); // any name or email that the text maches
+                }) 
+            }
+        case CLEAR_FILTER:
+            return {
+                ...state,
+                filtered: null
             }
             default:
                 return state;

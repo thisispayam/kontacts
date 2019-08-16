@@ -37,7 +37,7 @@ const ContactForm = () => {
     
     const onSubmit = (e) => {
         e.preventDefault();
-        if(!current){
+        if(current === null){
             addContact(contact);//running the state trough addContact function in ContactState.js
         }else{
             updateContact(contact);
