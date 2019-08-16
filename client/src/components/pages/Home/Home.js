@@ -2,10 +2,11 @@ import React from 'react'
 import Contacts from '../../contacts/Contacts';
 import ContactForm from '../../../components/contacts/ContactForm/ContactForm';
 import ContactFilter from '../../../components/contacts/ContactFilter/ContactFilter';
+import './Home.scss';
 
 const Home = () => {
     return (
-        <div >
+        <div className='home'>
             <div className='grid-1'>
                 <ContactForm />
               

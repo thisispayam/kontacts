@@ -1,5 +1,6 @@
 import React ,{useContext, useRef, useEffect} from 'react'
 import ContactContext from '../../../context/contact/contactContext';
+import './ContactFilter.scss';
 
 const ContactFilter = () => {
    const contactContext = useContext(ContactContext);
@@ -21,7 +22,7 @@ const ContactFilter = () => {
         }
     }
     return (
-        <form>
+        <form className='filter-form'>
             <input ref={text} type='text' placeholder='Filter contacts ...' onChange={onChange} />
         </form>
     )

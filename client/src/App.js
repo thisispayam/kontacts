@@ -6,7 +6,7 @@ import About from './components/pages/About/About';
 
 import ContactState from './context/contact/ContactState';
 
-import './App.css';
+import './App.scss';
 
 const App = () => {
   return (
