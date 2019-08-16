@@ -7,11 +7,12 @@ import './Navbar.scss';
 const Navbar = ({title, icon}) => {
     return (
         <div className='navbar bg-light'>
-            <img className="logo" src={Logo} alt='logo' />
+            <Link to='/'><img className="logo" src={Logo} alt='logo' />
             <h1>       
                 {title}
                 {/* <i className={icon}>{title}</i> */}  
             </h1>
+            </Link>
             <ul>
                 <li>
                     <Link to='/'>Home</Link>

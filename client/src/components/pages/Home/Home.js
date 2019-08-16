@@ -4,11 +4,11 @@ import ContactForm from '../../../components/contacts/ContactForm/ContactForm';
 
 const Home = () => {
     return (
-        <div className='grid-2'>
+        <div className='grid-1'>
             <div>
                 <ContactForm />
             </div>
-            <div>
+            <div className='flex-col'>
                 <Contacts />
             </div>
         </div>

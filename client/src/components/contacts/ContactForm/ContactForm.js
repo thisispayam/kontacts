@@ -40,7 +40,7 @@ const ContactForm = () => {
             <input type='radio' name='type' value='professional' checked={type === 'professional'} onChange={onChange} /> Professional {' '}
             <div>
                 <button type="submit" value='Add Contact' className='btn btn-primary btn-block'>
-                    Add Contact
+                    <i class="fas fa-user-plus"></i> Add Contact
                 </button>
             </div>
         </form>
