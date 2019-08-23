@@ -74,11 +74,11 @@ const ContactForm = () => {
             <input type='radio' name='type' value='personal' checked={type === 'personal'} onChange={onChange} /> Personal {' '}
             <input type='radio' name='type' value='professional' checked={type === 'professional'} onChange={onChange} /> Professional {' '}
             <div className='add-btn'>
-                <button type="submit" className='btn btn-primary btn-block'>
+                    <button type="submit" className='btn btn-primary btn-block round-btn'>
                     {current ? 'Update Contact' : 'Add Contact'}
                 </button>
                 {current &&
-                <button className='btn btn-block btn-light' onClick={clearAll}>Clear All</button>}
+                <button className='btn btn-block btn-light round-btn' onClick={clearAll}>Clear All</button>}
             </div>
                         </Card.Body>
                     </Accordion.Collapse>
