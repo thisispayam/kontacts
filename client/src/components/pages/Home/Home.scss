@@ -1,4 +1,7 @@
 .home {
     display: flex;
     flex-direction: column;
+    .contact-form {
+        display: flex;
+    }
 }

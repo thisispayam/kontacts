@@ -18,10 +18,11 @@ select,
 textarea {
     display: block;
     width: 45%;
-    padding: 0.4rem;
+    padding: 1rem 0.4rem;
     font-size: 1.2rem;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc !important;
     float: left;
+    border: none;
 }
 
 input[type='submit'],
@@ -58,4 +59,9 @@ table td {
 
 table th {
     background: var(--light-color);
+}
+
+.add-btn {
+    max-width: 200px;
+    float: right;
 }

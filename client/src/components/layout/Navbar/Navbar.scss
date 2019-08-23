@@ -81,6 +81,9 @@
     .navbar {
         display: block;
         text-align: center;
+        a {
+            text-decoration: none !important;
+        }
         h1 {
             margin-bottom: 0.6rem;
         }

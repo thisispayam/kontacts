@@ -7,9 +7,8 @@ import './Home.scss';
 const Home = () => {
     return (
         <div className='home'>
-            <div className='grid-1'>
+            <div className='grid-1 contact-form'>
                 <ContactForm />
-              
             </div>
             <ContactFilter />
             
