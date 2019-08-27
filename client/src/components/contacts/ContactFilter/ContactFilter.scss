@@ -1,4 +1,12 @@
-.filter-form {
-    justify-content: center;
+.contact-filter {
     display: flex;
+    position: relative;
+    .filter-form {
+        justify-content: center;
+        display: flex;
+        flex-basis: 100%;
+        input {
+            width: 100% !important;
+        }
+    }
 }

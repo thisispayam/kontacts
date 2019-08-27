@@ -8,30 +8,35 @@
     z-index: 1;
     width: 100%;
     border-bottom: solid 1px var(--primary-color);
-    opacity: 0.9;
     margin-bottom: 1rem;
+    background: var(--primary-color) !important;
+    position: fixed;
+    height: 70px;
     ul {
         display: flex;
     }
     a {
-        color: var(--primary-color);
+        color: var(--light-color);
         padding: 0.45rem;
         margin: 0 0.25rem;
         text-decoration: none;
+        position: relative;
+        top: -5px;
         .navbar .welcome span {
             margin-right: 0.6rem;
         }
     }
     &:hover {
-        color: var(--light-color);
+        color: var(--dark-color) !important;
     }
     .logo {
         position: absolute;
-        max-width: 50px;
+        max-width: 40px;
     }
     h1 {
         margin-left: 30px;
-        color: var(--primary-color);
+        color: var(--light-color);
+        font-size: 2em;
     }
 }
 
@@ -60,6 +65,9 @@
 /* Mobile Styles */
 
 @media (max-width: 700px) {
+    .container {
+        max-width: 100%;
+    }
     .hide-sm {
         display: none;
     }
@@ -91,6 +99,16 @@
         .navbar ul {
             text-align: center;
             justify-content: center;
+        }
+    }
+    .home {
+        top: 0;
+        right: 0 !important;
+        width: 100%;
+        max-width: 100%;
+        .contact-form {
+            position: relative !important;
+            max-width: 100%;
         }
     }
 }

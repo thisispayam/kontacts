@@ -10,12 +10,15 @@ const Home = () => {
             <div className='grid-1 contact-form'>
                 <ContactForm />
             </div>
-            <ContactFilter />
-            
-            <div className='flex-col'>
-               
-                <Contacts />
+            <div className='contact-body'>
+                <div className='contact-filter'>
+                    <ContactFilter />
+                </div>
+                <div className='flex-col contacts'>
+                    <Contacts />
+                </div>
             </div>
+            
         </div>
     )
 }

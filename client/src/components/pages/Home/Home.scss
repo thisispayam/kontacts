@@ -1,7 +1,40 @@
+@import '../../../App.scss';
 .home {
     display: flex;
     flex-direction: column;
+    position: relative;
+    right: -30%;
+    width: 75%;
+    @include respond-to(wide-screens) {
+        width: 78%;
+    }
     .contact-form {
         display: flex;
+        @include respond-to(handheld) {
+            position: relative;
+        }
+        max-width: 320px;
+        position: fixed;
+        top: 58px;
+        max-width: 320px;
+        left: 0;
+        display: flex;
+        height: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15),
+        0 3px 3px rgba(0, 0, 0, .15);
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: .5s;
+        background: var(--light-color);
+        input[type=text] {
+            width: 95%;
+        }
+        .card {
+            padding: 0 0 1em 0;
+            border: none;
+            @include respond-to(medium-screens) {
+                width: 100%;
+            }
+        }
     }
 }
