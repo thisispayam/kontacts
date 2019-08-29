@@ -1,10 +1,40 @@
-import React from 'react'
+import React, { Fragment, useContext} from 'react'
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import AuthContext from '../../../context/auth/authContext';
+
 import Logo from '../../../assets/logo.png';
 import './Navbar.scss';
 
 const Navbar = ({title, icon}) => {
+    const authContext = useContext(AuthContext);
+
+    const { isAuthenticated, logout, user } = authContext;
+
+    const onLogout = () => {
+        logout();
+    }
+    const authlinks = (
+        <Fragment>
+            <li className='welcome'>Hello {user && user.name}</li>
+            <li className='logout'>
+                <a onClick={onLogout} href="#!">
+                    <i className="fas fa-sign-out-alt"></i><span className="hid-sm">Logout</span>
+                </a>
+            </li>
+        </Fragment>
+    );
+
+    const guestlinks = (
+        <Fragment>
+            <li className='register'>
+                <Link to='/register'>Register</Link>
+            </li>
+            <li className='login'>
+                <Link to='/login'>Login</Link>
+            </li>
+        </Fragment>
+    );
     return (
         <div className='navbar bg-light'>
             <Link to='/'><img className="logo" src={Logo} alt='logo' />
@@ -14,18 +44,7 @@ const Navbar = ({title, icon}) => {
             </h1>
             </Link>
             <ul>
-                <li>
-                    <Link to='/'>Home</Link>
-                </li>
-                <li>
-                    <Link to='/about'>About</Link>
-                </li>
-                <li>
-                    <Link to='/register'>Register</Link>
-                </li>
-                <li>
-                    <Link to='/login'>Login</Link>
-                </li>
+                {isAuthenticated ? authlinks : guestlinks}  
             </ul>
         </div>
     )
