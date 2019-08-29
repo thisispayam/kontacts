@@ -1,7 +1,6 @@
 import React,{useState, useContext, useEffect} from 'react';
 import ContactContext from '../../../context/contact/contactContext';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import './ContactForm.scss';
 
 const ContactForm = () => {
@@ -59,7 +58,7 @@ const ContactForm = () => {
                 
         <form onSubmit={onSubmit}>
                     <Card.Header>
-                            <h2 className="text-primary">{current ? <i class="fas fa-user-edit"> Edit Contact</i> : <i class="fas fa-user-plus"> Add Contact</i> }</h2>
+                            <h2 className="text-primary">{current ? <i className="fas fa-user-edit"> Edit Contact</i> : <i className="fas fa-user-plus"> Add Contact</i> }</h2>
                     </Card.Header>
                         <Card.Body>
            <input type='text' name='name' placeholder='Name' value={name} onChange={onChange}/> 

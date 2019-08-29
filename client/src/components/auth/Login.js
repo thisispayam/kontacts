@@ -44,6 +44,10 @@ const Login = (props) => {
         }
     return (
         <div className='form-container register'>
+            <div className='contact-book'>
+                <i class="fas fa-address-book"></i>
+                <span>Manage your contacts here</span>
+            </div>
             <h3>
                 Account <span className="text-primary">Login</span>
             </h3>
