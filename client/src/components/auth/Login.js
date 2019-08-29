@@ -1,7 +1,27 @@
-import React,{useState} from 'react'
+import React,{useState, useContext, useEffect} from 'react';
+import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
+
 import './Auth.scss';
 
-const Login = () => {
+const Login = (props) => {
+    const alertContext = useContext(AlertContext);
+    const authContext = useContext(AuthContext);
+
+    const { setAlert } = alertContext;
+    const { login, error, clearErrors, isAuthenticated } = authContext;
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            props.history.push('/'); // directing to the homepage after log in
+        }
+        if (error === 'Invalid Credentials') {
+            setAlert(error, 'danger');
+            clearErrors();
+        }
+        // eslint-disable-next-line
+    }, [error, isAuthenticated, props.history]);
+
     const [user, setUser] = useState({
         email: '',
         password: ''
@@ -13,7 +33,14 @@ const Login = () => {
     )
         const onSubmit = e => {
             e.preventDefault();
-            console.log(e, 'login submit');
+            if (email === '' || password === ''){
+                setAlert('Please fill in all fields', 'danger');
+            } else {
+                login({
+                    email,
+                    password
+                })
+            }
         }
     return (
         <div className='form-container register'>
@@ -22,10 +49,10 @@ const Login = () => {
             </h3>
             <form onSubmit={onSubmit}>
                 <div className="form-group">
-                    <input type="email" name="email" placeholder='Email' value={email} onChange={onChange} />
+                    <input type="email" name="email" placeholder='Email' value={email} onChange={onChange} required />
                 </div>
                 <div className="form-group">
-                    <input type="password" name="password" placeholder='Password' value={password} onChange={onChange} />
+                    <input type="password" name="password" placeholder='Password' value={password} onChange={onChange} required/>
                 </div>
                
                 <input type="submit" value="login" className="btn btn-primary btn-block round-btn"/>
