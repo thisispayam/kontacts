@@ -8,7 +8,7 @@ ADD_CONTACT,
 DELETE_CONTACT,
 SET_CURRENT,
 CLEAR_CURRENT,
-CLEAR_CONTACT,
+CLEAR_CONTACTS,
 UPDATE_CONTACT,
 FILTER_CONTACT,
 CLEAR_FILTER,
@@ -68,6 +68,10 @@ const ContactState = props => {
     const deleteContact = id => {
         dispatch({ type: DELETE_CONTACT, payload: id })
     }
+    //Clear Contact
+    const clearContacts = () => {
+        dispatch({ type: CLEAR_CONTACTS })
+    }
     // Set Current Contact
     const setCurrent = contact => {
         dispatch({ type: SET_CURRENT, payload: contact })
@@ -97,6 +101,7 @@ const ContactState = props => {
             error: state.error,
             addContact,
             deleteContact,
+            clearContacts,
             setCurrent,
             clearCurrent,
             updateContact,
