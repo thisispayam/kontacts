@@ -1,7 +1,7 @@
 import React,{Fragment} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './components/routing/PrivateRoute';
-import Navbar from './components/layout/Navbar/Navbar';
+import NavBar from './components/layout/Navbar/Navbar';
 import Home from './components/pages/Home/Home';
 import About from './components/pages/About/About';
 import Register from './components/auth/Register';
@@ -25,7 +25,7 @@ const App = () => {
         <AlertState>
           <Router>
             <Fragment>
-              <Navbar />
+              <NavBar />
               <div className="container">
                 <Alerts/>
                 <Switch>

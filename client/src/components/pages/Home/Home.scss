@@ -3,20 +3,28 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    right: -30%;
+    right: -19%;
     width: 75%;
     @include respond-to(wide-screens) {
-        width: 78%;
+        width: 100% !important;
+    }
+    @include respond-to(handheld) {
+        width: 100% !important;
     }
     .contact-form {
         display: flex;
+        @include respond-to(wide-screens) {
+            max-width: 320px;
+        }
+        @include respond-to(medium-screens) {
+            max-width: 320px;
+        }
         @include respond-to(handheld) {
             position: relative;
+            max-width: 100% !important;
         }
-        max-width: 320px;
         position: fixed;
         top: 58px;
-        max-width: 320px;
         left: 0;
         display: flex;
         height: 100%;
@@ -36,5 +44,29 @@
                 width: 100%;
             }
         }
+    }
+}
+
+$layout-breakpoint-small: 700px;
+@media (max-width: $layout-breakpoint-small) {
+    .container {
+        margin: 4em auto;
+    }
+    .home {
+        width: 100%;
+    }
+    .contact-form {
+        max-width: 100% !important;
+        top: 0 !important;
+    }
+    .contact-body {
+        width: 95%;
+        margin: auto !important;
+    }
+    .contacts {
+        width: 100%;
+    }
+    .contact-book {
+        display: none;
     }
 }

@@ -2,7 +2,7 @@
     /* Global Styles */
     
      :root {
-        --primary-color: #94618e;
+        --primary-color: #DA4B7B;
         --dark-color: #49274a;
         --light-color: #f8eee7;
         --danger-color: #dc3545;
@@ -52,8 +52,9 @@
     /* Utilities */
     
     .container {
-        margin: 6em auto 0 auto;
-        padding: 0 2rem;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0;
     }
     /* Text Styles*/
     

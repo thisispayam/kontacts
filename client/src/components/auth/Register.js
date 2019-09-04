@@ -1,7 +1,8 @@
-import React, { useState, useContext, useEffect} from 'react'
+import React, { useState, useContext, useEffect, Fragment} from 'react'
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 
+import Hero from '../Hero/Hero';
 import './Auth.scss';
 
 const Register = (props) => {
@@ -47,11 +48,9 @@ const Register = (props) => {
             }
         }
     return (
+        <Fragment>
+            <Hero/>
         <div className='form-container register'>
-            <div className='contact-book'>
-                <i class="fas fa-address-book"></i>
-                <span>Manage your contacts here</span>
-            </div>
             <h3>
                 Account <span className="text-primary">Register</span>
             </h3>
@@ -71,6 +70,8 @@ const Register = (props) => {
                 <input type="submit" value="register" className="btn btn-primary btn-block round-btn"/>
             </form>
         </div>
+        </Fragment>
+
     )
 }
 

@@ -1,7 +1,7 @@
 import React ,{Fragment, useContext, useEffect} from 'react'
 import ContactContext from '../../context/contact/contactContext';
 import ContactItem from './ContactItem';
-import Spinner from '../layout/Spinner/Spinner';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Contacts = () => {
     const contactContext = useContext(ContactContext);
@@ -30,7 +30,7 @@ const Contacts = () => {
                         ))}
                 </Fragment>
                
-            ) : <Spinner />}
+            ) : <Spinner animation="border" />}
             
         </Fragment>
     );

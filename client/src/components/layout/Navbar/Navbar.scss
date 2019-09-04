@@ -12,6 +12,7 @@
     background: var(--primary-color) !important;
     position: fixed;
     height: 70px;
+    border: none !important;
     ul {
         display: flex;
     }
@@ -101,13 +102,29 @@
         text-align: center;
         a {
             text-decoration: none !important;
+            display: flex;
         }
         h1 {
             margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: right;
+            color: #fff;
         }
-        .navbar ul {
+        ul {
             text-align: center;
-            justify-content: center;
+            justify-content: right;
+            position: relative;
+            top: -51px;
+        }
+        .logout {
+            position: relative;
+            top: -15px;
+        }
+        .welcome {
+            right: -94px;
+            position: relative;
+            justify-content: right;
+            top: 10px;
         }
     }
     .home {

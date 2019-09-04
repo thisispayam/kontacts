@@ -18,7 +18,7 @@
     select,
     textarea {
         display: block;
-        width: 45%;
+        width: 100%;
         padding: 1rem 0.4rem;
         font-size: 1.2rem;
         border-bottom: 1px solid #ccc !important;
@@ -82,13 +82,22 @@
     }
     
     .contacts {
-        width: 100%;
+        width: 80%;
+        max-width: 100%;
     }
     
     .contact-body {
+        width: 85%;
+        margin: auto;
+        margin-left: 159px !important;
+        @include respond-to(wide-screens) {
+            margin-left: 115px;
+        }
         @include respond-to(medium-screens) {
-            width: 100%;
-            margin-left: 70px;
+            margin-left: 169px !important;
+            margin: auto;
+            margin-left: auto;
+            width: 83%;
         }
         @include respond-to(handheld) {
             margin-left: 90px;
