@@ -1,7 +1,7 @@
 .contact-filter {
     display: flex;
     position: relative;
-    margin: 3em auto 10px 2px;
+    margin: 3em auto 10px 10px;
     .filter-form {
         justify-content: center;
         display: flex;
@@ -9,5 +9,12 @@
         input {
             width: 100% !important;
         }
+    }
+}
+
+$layout-breakpoint-small: 590px;
+@media (max-width: $layout-breakpoint-small) {
+    .contact-filter {
+        margin: 0;
     }
 }
